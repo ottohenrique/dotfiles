@@ -116,15 +116,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-alias vim='gvim'
-alias repos='cd /projects'
-
-export RUBYOPT='-Ku'
-
-export ORACLE_HOME=/usr/lib/oracle/11.2/client64
-export LD_LIBRARY_PATH=/usr/lib/oracle/11.2/client64/lib

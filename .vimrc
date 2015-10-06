@@ -25,9 +25,6 @@ set linespace=4
 "statusline setup
 set statusline=%f       "tail of the filename
 
-"Git
-set statusline+=%{fugitive#statusline()}
-
 "RVM
 set statusline+=%{exists('g:loaded_rvm')?rvm#statusline():''}
 
@@ -193,37 +190,9 @@ set ttymouse=xterm2
 set ic
 set smartcase
 
-if has("gui_running")
-    "tell the term has 256 colors
-    set t_Co=256
-
-    colorscheme github
-    set guitablabel=%M%t
-    set lines=40
-    set columns=115
-
-    if has("gui_gnome")
-        set term=gnome-256color
-        colorscheme github
-        set guifont=Monospace\ 10
-    endif
-else
-    "dont load csapprox if there is no gui support - silences an annoying warning
-    let g:CSApprox_loaded = 1
-
-    "set railscasts colorscheme when running vim in gnome terminal
-    if $COLORTERM == 'gnome-terminal'
-        set term=gnome-256color
-        colorscheme github
-    else
-        if $TERM == 'xterm'
-            set term=xterm-256color
-            colorscheme github
-        else
-            colorscheme default
-        endif
-    endif
-endif
+set term=gnome-256color
+colorscheme github
+set guifont=Monospace\ 10
 
 silent! nmap <silent> <Leader>p :NERDTreeToggle<CR>
 
